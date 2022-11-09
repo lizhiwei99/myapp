@@ -1,6 +1,6 @@
 <template>
   <Hi></Hi>
-  <h2>加油</h2>
+  <h2>这是一个聊天室</h2>
 </template>
 
 <script lang="ts">
