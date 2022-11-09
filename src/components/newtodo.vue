@@ -10,9 +10,11 @@ const keyword=ref('')
 const addtodo=()=>{
     store.todolist.push({
         todo:keyword.value,
-        isAct:true,
+        isAct:false,
         isShow:true
     })
+    //置空关键词
+    keyword.value = ''
 }
 </script>
 

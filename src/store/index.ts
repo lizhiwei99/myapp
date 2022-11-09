@@ -13,7 +13,7 @@ interface todolist {
 export const mainStore = defineStore('main',{
     state:():state=>{
         return{
-            todolist:[]
+            todolist: JSON.parse(localStorage.getItem('todolist') as string) ||[]
         }
     },
     getters:{},
