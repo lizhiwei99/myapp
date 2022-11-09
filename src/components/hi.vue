@@ -1,5 +1,5 @@
 <template>
-  <input type="text" ref="inputref">
+  <input type="text" ref="inputref" v-model="textvalue">
   <button @click="sendText">发送</button>
 </template>
 
@@ -9,6 +9,7 @@ import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'hi',
   setup() {
+    let textvalue  = ref('')
     const inputref = ref<HTMLElement|null>(null)
     onMounted(()=>{
       console.log(inputref)
@@ -17,10 +18,12 @@ export default {
 
     const sendText = ()=>{
         inputref.value&&inputref.value.focus()
+        textvalue.value = ''
     }
     return {
       inputref,
-      sendText
+      sendText,
+      textvalue
     }
   }
 }
