@@ -19,10 +19,11 @@ const deletetodo=(index:number)=>{
 }
 
 //获取dom 数组
-const arr : object[] = []
+const arr : HTMLElement[] = []
 const todoDom = ref(arr)
 const setDom =(el:HTMLElement)=>{
     todoDom.value.push(el)
+    return undefined
 }
 //数据更新前将tododom清空 以免重复push
 onBeforeUpdate(()=>{
@@ -37,7 +38,7 @@ const showInput = (index:number) => {
     //  todoDom.value[index].focus()   
     // }, );
     nextTick(()=>{
-        todoDom.value[index].focus()  
+        todoDom.value[index].focus()
     })
 }
 
